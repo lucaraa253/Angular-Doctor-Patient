@@ -8,6 +8,7 @@ import { AppointmentSystemComponent } from './components/appointment-system/appo
 import { DoctorListComponent } from './components/doctor-list/doctor-list.component';
 import { DoctorControlComponent } from './components/doctor-control/doctor-control.component';
 import { DoctorService } from './services/doctor.service';
+import { AppointmentListComponent } from './components/appointment-list/appointment-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DoctorService } from './services/doctor.service';
     DoctorFinderComponent,
     AppointmentSystemComponent,
     DoctorListComponent,
-    DoctorControlComponent
+    DoctorControlComponent,
+    AppointmentListComponent
   ],
   imports: [
     BrowserModule,
