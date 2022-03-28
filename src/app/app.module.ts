@@ -3,16 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DoctorFinderComponent } from './components/doctor-finder/doctor-finder.component';
+import { AppointmentSystemComponent } from './components/appointment-system/appointment-system.component';
+import { DoctorListComponent } from './components/doctor-list/doctor-list.component';
+import { DoctorControlComponent } from './components/doctor-control/doctor-control.component';
+import { DoctorService } from './services/doctor.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DoctorFinderComponent,
+    AppointmentSystemComponent,
+    DoctorListComponent,
+    DoctorControlComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [DoctorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

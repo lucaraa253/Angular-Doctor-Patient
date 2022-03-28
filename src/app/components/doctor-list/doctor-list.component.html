@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Specialty</th>
+    <th>Insurance</th>
+  </tr>
+  <tr *ngFor="let d of doctors">
+    <td>{{d.name}}</td>
+    <td>{{d.location}}</td>
+    <td>{{d.specialty}}</td>
+    <td>{{d.insurance}}</td>
+    <td><a routerLink='AppointmentSystem'>Make Appointment</a></td>
+  </tr>
+</table>
