@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,7 @@ import { DoctorListComponent } from './components/doctor-list/doctor-list.compon
 import { DoctorControlComponent } from './components/doctor-control/doctor-control.component';
 import { DoctorService } from './services/doctor.service';
 import { AppointmentListComponent } from './components/appointment-list/appointment-list.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +19,13 @@ import { AppointmentListComponent } from './components/appointment-list/appointm
     AppointmentSystemComponent,
     DoctorListComponent,
     DoctorControlComponent,
-    AppointmentListComponent
+    AppointmentListComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [DoctorService],
   bootstrap: [AppComponent]

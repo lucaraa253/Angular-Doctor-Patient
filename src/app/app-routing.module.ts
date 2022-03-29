@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DoctorFinderComponent } from './components/doctor-finder/doctor-finder.component';
 import { AppointmentSystemComponent } from './components/appointment-system/appointment-system.component';
 import { AppointmentListComponent } from './components/appointment-list/appointment-list.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'AppointmentList',
     component: AppointmentListComponent
+  },
+  {
+    path: 'SignUp',
+    component: SignUpComponent
   }
 ];
 
