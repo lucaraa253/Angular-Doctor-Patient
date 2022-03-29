@@ -11,6 +11,7 @@ import { DoctorControlComponent } from './components/doctor-control/doctor-contr
 import { DoctorService } from './services/doctor.service';
 import { AppointmentListComponent } from './components/appointment-list/appointment-list.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LogInComponent } from './components/log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     DoctorListComponent,
     DoctorControlComponent,
     AppointmentListComponent,
-    SignUpComponent
+    SignUpComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
