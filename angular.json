@@ -65,13 +65,13 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
+            "builder": "@angular-devkit/build-angular:dev-server",
+            "configurations": {
             "production": {
-              "browserTarget": "p2proto:build:production"
+                "browserTarget": "p2proto:build:production"
             },
             "development": {
-              "browserTarget": "p2proto:build:development"
+                "browserTarget": "p2proto:build:development"
             }
           },
           "defaultConfiguration": "development"
