@@ -11,6 +11,8 @@ export class DoctorListComponent implements OnInit {
 
   doctors: Doctor[] = [];
 
+  public errorMessage !: string;
+
   constructor(public doctorService: DoctorService) { }
 
   ngOnInit(): void {
@@ -18,7 +20,15 @@ export class DoctorListComponent implements OnInit {
   }
 
   refreshDoctors() {
+    this.doctorService.getDoctors().subscribe((data: any) => {
+      this.doctors = data;
+    }, err => this.errorMessage = err)
+  }
+
+/*
+  refreshDoctors() {
     this.doctors = this.doctorService.getDoctors();
   }
+*/
 
 }

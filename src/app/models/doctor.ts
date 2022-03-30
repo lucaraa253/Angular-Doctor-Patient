@@ -1,6 +1,6 @@
 export class Doctor {
-  name ?: string;
-  location ?: string;
-  specialty ?: string;
-  insurance ?: string;
+  doctorId ?: number;
+  doctorName ?: string;
+  typeofDoctor ?: string;
+  insuranceProvider ?: string;
 }
