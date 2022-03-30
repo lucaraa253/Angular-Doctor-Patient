@@ -1,6 +1,6 @@
 export class Doctor {
   doctorId ?: number;
   doctorName ?: string;
-  typeofDoctor ?: string;
+  typeOfDoctor ?: string;
   insuranceProvider ?: string;
 }
