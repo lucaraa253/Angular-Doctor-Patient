@@ -1,15 +1,20 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Specialty</th>
-    <th>Insurance</th>
-  </tr>
-  <tr *ngFor="let d of doctors">
-    <td>{{d.doctorName}}</td>
-    <td>{{d.typeofDoctor}}</td>
-    <td>{{d.insuranceProvider}}</td>
-    <td><a routerLink='AppointmentSystem'>Make Appointment</a></td>
-  </tr>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Specialty</th>
+      <th scope="col">Insurance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of doctors">
+      <td>{{d.name}}</td>
+      <td>{{d.specialty}}</td>
+      <td>{{d.insurance}}</td>
+      <td><a routerLink='AppointmentSystem'>Make Appointment</a></td>
+    </tr>
+  </tbody>
 </table>
 <p>{{errorMessage}}</p>
 
