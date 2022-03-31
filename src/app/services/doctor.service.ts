@@ -9,38 +9,6 @@ import { Doctor } from '../models/doctor';
 })
 export class DoctorService {
 
-  mockdata = [
-  {
-    'name': 'Dr. No',
-    'location': 'Cuba',
-    'specialty': 'Coroner',
-    'insurnace': 'None'
-  },
-  {
-    'name': 'Dr. Kildare',
-    'location': 'Ventura',
-    'specialty': 'General Practitioner',
-    'insurance': 'Blue Cross'
-  },
-  {
-    'name': 'Dr. Caligari',
-    'location': 'Port Hueneme',
-    'specialty': 'Oncology',
-    'insurance': 'Blue Shield'
-  },
-  {
-    'name': 'Dr. Frankenstein',
-    'location': 'Oxnard',
-    'specialty': 'Pediatrics',
-    'insurance': 'Blue Cross'
-  },
-  {
-    'name': 'Dr. Pepper',
-    'location': 'Ventura',
-    'specialty': 'Pediatrics',
-    'insurance': 'Cigna'
-  }];
-
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type' : 'application/json',
@@ -49,10 +17,6 @@ export class DoctorService {
   }
 
   constructor(private http: HttpClient) { }
-
-  getDoctorsMock() {
-    return this.mockdata;
-  }
 
   doctorURL = 'http://localhost:6060/doctor';
 

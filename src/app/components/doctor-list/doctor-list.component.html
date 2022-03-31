@@ -8,9 +8,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let d of doctors">
+    <tr *ngFor="let d of (doctors | specialtySelect:specialty | insuranceSelect:insurance)">
       <td>{{d.doctorName}}</td>
-      <td>{{d.typeOfDoctor}}</td>
+      <td>{{d.typeofDoctor}}</td>
       <td>{{d.insuranceProvider}}</td>
       <td><a routerLink='AppointmentSystem'>Make Appointment</a></td>
     </tr>

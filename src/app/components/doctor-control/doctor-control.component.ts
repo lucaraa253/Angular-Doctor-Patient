@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-doctor-control',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doctor-control.component.css']
 })
 export class DoctorControlComponent implements OnInit {
+
+ @Output() messageEvent = new EventEmitter<string>();
 
   x: string = "";
   
@@ -16,4 +18,11 @@ export class DoctorControlComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  specialtyChange(event: any) {
+    this.messageEvent.emit('s' + event.target.value);
+  }
+
+  insuranceChange(event: any) {
+    this.messageEvent.emit('i' + event.target.value);
+  }
 }

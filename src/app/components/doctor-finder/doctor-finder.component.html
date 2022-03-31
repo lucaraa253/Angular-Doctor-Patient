@@ -1,4 +1,4 @@
-<app-doctor-control></app-doctor-control>
+<app-doctor-control (messageEvent)="receiveMessage($event)"></app-doctor-control>
 <hr/>
-<app-doctor-list></app-doctor-list>
+<app-doctor-list [specialty]="specialtyMessage" [insurance]="insuranceMessage"></app-doctor-list>
 

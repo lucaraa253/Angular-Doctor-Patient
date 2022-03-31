@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Doctor } from '../../models/doctor';
 import { DoctorService } from '../../services/doctor.service';
+import { SpecialtySelectPipe } from '../../pipes/specialty-select.pipe';
 
 @Component({
   selector: 'app-doctor-list',
@@ -10,6 +11,10 @@ import { DoctorService } from '../../services/doctor.service';
 export class DoctorListComponent implements OnInit {
 
   doctors: Doctor[] = [];
+
+  @Input() specialty: string = "";
+
+  @Input() insurance: string = "";
 
   public errorMessage !: string;
 
@@ -24,11 +29,5 @@ export class DoctorListComponent implements OnInit {
       this.doctors = data;
     }, err => this.errorMessage = err)
   }
-
-/*
-  refreshDoctors() {
-    this.doctors = this.doctorService.getDoctors();
-  }
-*/
 
 }

@@ -12,5 +12,14 @@ export class DoctorFinderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  specialtyMessage: string = "";
+  insuranceMessage: string = "";
+
+  receiveMessage($event : any) {
+    if ($event[0] == 's')
+      this.specialtyMessage = $event.substring(1);
+    else if ($event[0] == 'i')
+      this.insuranceMessage = $event.substring(1);
+  }
  
 }

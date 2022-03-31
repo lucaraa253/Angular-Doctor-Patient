@@ -3,7 +3,7 @@
     <td>
       <div><label>Specialty</label></div>
       <div>
-        <select>
+        <select (change)="specialtyChange($event)">
           <option value="">Any</option>
           <option value="Psychiatrist">Psychiatrist</option>
           <option value="Radiologist">Radiologist</option>
@@ -17,7 +17,7 @@
     <td>
       <div><label>Insurance</label></div>
       <div>
-        <select>
+        <select (change)="insuranceChange($event)">
           <option value="">Any</option>
           <option value="blue cross">Blue Cross</option>
           <option value="cobra">Cobra</option>

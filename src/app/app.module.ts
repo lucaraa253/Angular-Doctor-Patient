@@ -13,6 +13,8 @@ import { DoctorService } from './services/doctor.service';
 import { AppointmentListComponent } from './components/appointment-list/appointment-list.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LogInComponent } from './components/log-in/log-in.component';
+import { SpecialtySelectPipe } from './pipes/specialty-select.pipe';
+import { InsuranceSelectPipe } from './pipes/insurance-select.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { LogInComponent } from './components/log-in/log-in.component';
     DoctorControlComponent,
     AppointmentListComponent,
     SignUpComponent,
-    LogInComponent
+    LogInComponent,
+    SpecialtySelectPipe,
+    InsuranceSelectPipe
   ],
   imports: [
     BrowserModule,
