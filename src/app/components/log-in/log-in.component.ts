@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,9 +11,7 @@ import { Router } from '@angular/router';
 export class LogInComponent implements OnInit {
 
   public loginForm !: FormGroup;
-
-  user: any;
-  a: any;
+  public input: any;
 
   constructor(public formBuilder: FormBuilder, public http : HttpClient, public router : Router) { }
 
@@ -26,17 +24,13 @@ export class LogInComponent implements OnInit {
   }
 
   login() {
-  /*
-    this.http.get<any>("http://localhost:4200/")
-    .subscribe(res=> {
-      const user = res.find(a : any)=> {
-        return a.username === this.loginForm.value.username && a.password === this.loginForm.value.password
-      }
-    });
-    if(user) {
-      alert("Login successful.");
-       this.loginForm.reset();
+    if (this.input.username && this.input.password) {
+      let headers = new HttpHeaders({ 'content-type' : 'application/json'});
+      this.http.post('http://localhost:4200/patient', JSON.stringify(this.input), { headers : headers})
+      .subscribe(result =>
+          this.router.navigate(['/doctor-control'])
+        )
     }
-    */
+
   }
 }
