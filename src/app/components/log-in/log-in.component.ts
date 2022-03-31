@@ -11,8 +11,9 @@ import { Router } from '@angular/router';
 export class LogInComponent implements OnInit {
 
   public loginForm !: FormGroup;
-  const user: any;
-  const a: any;
+
+  user: any;
+  a: any;
 
   constructor(public formBuilder: FormBuilder, public http : HttpClient, public router : Router) { }
 
@@ -25,6 +26,7 @@ export class LogInComponent implements OnInit {
   }
 
   login() {
+  /*
     this.http.get<any>("http://localhost:4200/")
     .subscribe(res=> {
       const user = res.find(a : any)=> {
@@ -35,5 +37,6 @@ export class LogInComponent implements OnInit {
       alert("Login successful.");
        this.loginForm.reset();
     }
+    */
   }
 }
