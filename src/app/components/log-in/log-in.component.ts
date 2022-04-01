@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Patient } from 'src/app/models/patient';
 
 @Component({
   selector: 'app-log-in',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class LogInComponent implements OnInit {
 
   public loginForm !: FormGroup;
-  public input: any;
+  public patient = new Patient()
 
   constructor(public formBuilder: FormBuilder, public http : HttpClient, public router : Router) { }
 
@@ -24,9 +25,9 @@ export class LogInComponent implements OnInit {
   }
 
   login() {
-    if (this.input.username && this.input.password) {
+    if (this.patient) {
       let headers = new HttpHeaders({ 'content-type' : 'application/json'});
-      this.http.post('http://localhost:4200/patient', JSON.stringify(this.input), { headers : headers})
+      this.http.post('http://localhost:4200/patient', JSON.stringify(this.patient), { headers : headers})
       .subscribe(result =>
           this.router.navigate(['/doctor-control'])
         )
