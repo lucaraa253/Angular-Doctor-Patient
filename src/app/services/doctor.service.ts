@@ -18,7 +18,7 @@ export class DoctorService {
 
   constructor(private http: HttpClient) { }
 
-  doctorURL = 'http://localhost:6060/doctor';
+  doctorURL = 'http://localhost:5050/doctor';
 
   getDoctors() : Observable<Doctor[]> {
     return this.http.get<Doctor[]>(this.doctorURL, this.httpOptions)

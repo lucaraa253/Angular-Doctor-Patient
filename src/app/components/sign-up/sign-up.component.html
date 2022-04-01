@@ -1,24 +1,23 @@
 <div class="container-fluid d-flex justify-content-center col-md-6">
-
   <div class="card">
-    < class="card-body">
+    <div class="card-body">
       <form class="row g-3" [formGroup]="signUpForm" (ngSubmit)="signUp()">
-    <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">Username</label>
-      <input formControlName="username" type="text" class="form-control" id="inputUsername">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Username</label>
+          <input formControlName="username" type="text" class="form-control" id="inputUsername" autocomplete="username">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input formControlName="password" type="password" class="form-control" id="inputPassword" autocomplete="new-password">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Insurance</label>
+          <input formControlName="insurance" type="text" class="form-control" id="inputInsurance">
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </form>
     </div>
-    <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">Password</label>
-      <input formControlName="password" type="password" class="form-control" id="inputPassword">
-    </div>
-    <div class="col-12">
-      <label for="inputAddress" class="form-label">Insurance</label>
-      <input formControlName="insurance" type="text" class="form-control" id="inputInsurance">
-    </div>
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Sign in</button>
-    </div>
-  </form>
-    </div>
-
+  </div>
 </div>
