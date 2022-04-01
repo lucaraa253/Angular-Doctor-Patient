@@ -1,9 +1,30 @@
-<h1>{{title}}</h1>
-<hr/>
-<a routerLink='DoctorFinder'>Find Doctor</a> &nbsp;
-<a routerLink='AppointmentList'>List Appointments</a> &nbsp;
-<a routerLink='LogIn'>Log In</a> &nbsp;
-<a routerLink='SignUp'>Sign Up</a> &nbsp;
-<hr/>
-<!-- router-outlet is set to either doctor select page or appointment page -->
-<router-outlet></router-outlet>
+<div class="container-fluid">
+  <h1 class="text-center">{{title}}</h1>
+  <div class="card text-center ">
+    
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink='DoctorFinder'>Find Doctor</a> &nbsp;
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink='AppointmentList'>List Appointments</a> &nbsp;
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink='LogIn'>Log In</a> &nbsp;
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink='SignUp'>Sign Up</a> &nbsp;
+        </li>
+      </ul>
+    </div>
+
+    <!-- router-outlet is set to either doctor select page or appointment page -->
+    <div class="card-body">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>
+
+
