@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Patient } from 'src/app/models/patient';
+import { PatientService } from '../../services/patient.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-log-in',
@@ -14,24 +16,36 @@ export class LogInComponent implements OnInit {
   public loginForm !: FormGroup;
   public patient = new Patient()
 
-  constructor(public formBuilder: FormBuilder, public http : HttpClient, public router : Router) { }
+  constructor(public formBuilder: FormBuilder,
+              public router : Router,
+              public patientService : PatientService,
+              public user : UserService) { }
 
   ngOnInit(): void {
     this.loginForm =  this.formBuilder.group({
       username:[''],
       password:['']
     })
-
   }
 
+  private errorMessage !: string;
+  
   login() {
-    if (this.patient) {
-      let headers = new HttpHeaders({ 'content-type' : 'application/json'});
-      this.http.post('http://localhost:4200/patient', JSON.stringify(this.patient), { headers : headers})
-      .subscribe(result =>
-          this.router.navigate(['/doctor-control'])
-        )
+    if (this.loginForm.value.username === '' || this.loginForm.value.password ==- '')
+      alert('enter username and password');
+    else {
+      this.patientService.getPatient(this.loginForm.value.username).subscribe(
+        (data: Patient) => {
+           this.patient = data;
+           if (this.patient.password === this.loginForm.value.password) {
+             this.user.user = this.patient;
+             this.router.navigate(['DoctorFinder']);
+           }
+           else
+             alert('incorrect username or password');
+        },
+        err => alert('incorrect username or password')
+        );
     }
-
   }
 }
