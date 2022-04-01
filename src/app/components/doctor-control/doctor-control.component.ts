@@ -9,10 +9,6 @@ export class DoctorControlComponent implements OnInit {
 
  @Output() messageEvent = new EventEmitter<string>();
 
-  x: string = "";
-  
-  location: string  = "";
-
   constructor() { }
 
   ngOnInit(): void {
