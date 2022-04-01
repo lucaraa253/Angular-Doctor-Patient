@@ -25,11 +25,11 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp() {
-    this.http.post<any>("http://localhost:4200/", this.signUpForm.value)
+    this.http.post<any>("http://localhost:4200/patient", this.signUpForm.value)
     .subscribe(res=> {
       alert("Sign up successful.");
       this.signUpForm.reset();
-      this.router.navigate(['log-in']);
+      this.router.navigate(['/log-in']);
     },err=> {
       alert("Uh-oh! Something went wrong.")
     })
