@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, } from '@angular/forms'
 import { Router } from '@angular/router';
 
+import { Patient } from '../../models/patient';
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -19,20 +21,33 @@ export class SignUpComponent implements OnInit {
     this.signUpForm = this.formBuilder.group({
       username:[''],
       password:[''],
+      confirmPassword:[''],
       insurance:['']
     })
 
   }
 
   signUp() {
-    this.http.post<any>("http://localhost:4200/patient", this.signUpForm.value)
-    .subscribe(res=> {
-      alert("Sign up successful.");
-      this.signUpForm.reset();
-      this.router.navigate(['/log-in']);
-    },err=> {
-      alert("Uh-oh! Something went wrong.")
-    })
+    console.log(this.signUpForm.value);
+
+    if (this.signUpForm.value.password !== this.signUpForm.value.confirmPassword)
+      alert("Passwords don't match");
+    else {
+      let patient = new Patient();
+
+      patient.username = this.signUpForm.value.username;
+      patient.password = this.signUpForm.value.password;
+      patient.insuranceProvider = this.signUpForm.value.insurance;
+
+      this.http.post("http://localhost:5050/patient", patient, { responseType : 'text' })
+        .subscribe(res=> {
+          alert("Sign up successful.");
+          this.signUpForm.reset();
+          this.router.navigate(['LogIn']);
+        },err=> {
+          alert(err.message)
+        });
+    }
   }
 
 }
