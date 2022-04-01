@@ -38,7 +38,7 @@ export class LogInComponent implements OnInit {
         (data: Patient) => {
            this.patient = data;
            if (this.patient.password === this.loginForm.value.password) {
-             this.user.user = this.patient;
+             this.user.setUser(this.patient);
              this.router.navigate(['DoctorFinder']);
            }
            else

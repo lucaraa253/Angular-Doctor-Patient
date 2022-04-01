@@ -8,6 +8,18 @@ export class UserService {
 
   constructor() { }
 
-  public user = new Patient();;
+  private user = new Patient();
+  
+  getUser(): Patient {
+    return this.user;
+  }
 
+  setUser(user : Patient): void {
+    this.user = user;
+  }
+
+  resetUser(): void {
+    this.user = new Patient();
+  }
+  
 }

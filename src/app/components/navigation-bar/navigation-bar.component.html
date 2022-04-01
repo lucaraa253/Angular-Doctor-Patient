@@ -1,0 +1,25 @@
+<ul class="nav nav-tabs card-header-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink='DoctorFinder'>Find Doctor</a> &nbsp;
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" routerLink='AppointmentList'>List Appointments</a> &nbsp;
+  </li>
+  <div *ngIf="this.user.getUser().username; then logedin else notlogedin"></div>
+  <ng-template #notlogedin>
+    <li class="nav-item">
+      <a class="nav-link active" routerLink='LogIn'>Log In</a> &nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" routerLink='SignUp'>Sign Up</a> &nbsp;
+    </li>
+  </ng-template>
+  <ng-template #logedin>
+    <li class="nav-item">
+      <a class="nav-link active" (click)="onClick()" >Log Out</a> &nbsp;
+    </li>
+    <li class="nav-item">
+      <span>Welcome {{this.user.getUser().username}}</span>
+    </li>
+  </ng-template>
+</ul>

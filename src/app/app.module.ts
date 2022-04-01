@@ -15,6 +15,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { SpecialtySelectPipe } from './pipes/specialty-select.pipe';
 import { InsuranceSelectPipe } from './pipes/insurance-select.pipe';
+import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { InsuranceSelectPipe } from './pipes/insurance-select.pipe';
     SignUpComponent,
     LogInComponent,
     SpecialtySelectPipe,
-    InsuranceSelectPipe
+    InsuranceSelectPipe,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,
