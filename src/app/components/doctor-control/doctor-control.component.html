@@ -1,9 +1,9 @@
-<table class="table">
+<table class="table bg-light bg-gradient">
   <tr>
     <td>
-      <div><label>Specialty</label></div>
+      <div class=""><label>Specialty</label></div>
       <div>
-        <select (change)="specialtyChange($event)">
+        <select class="form-select" (change)="specialtyChange($event)">
           <option value="">Any</option>
           <option value="Psychiatrist">Psychiatrist</option>
           <option value="Radiologist">Radiologist</option>
@@ -17,7 +17,7 @@
     <td>
       <div><label>Insurance</label></div>
       <div>
-        <select (change)="insuranceChange($event)">
+        <select class="form-select" (change)="insuranceChange($event)">
           <option value="">Any</option>
           <option value="blue cross">Blue Cross</option>
           <option value="cobra">Cobra</option>
